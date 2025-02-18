@@ -1,16 +1,15 @@
 def greet():
     """
-
-    :simple function printing hello
-    return: 0
+    Simple function printing hello
+    :return: 0
     """
     print("Hello!")
     return 0
 
 def greet_improved(name):
     """
-    More complex greet tht takes a name as param
-    :param name: the bame of the person to greet
+    More complex greet that takes a name as param
+    :param name: the name of the person to greet
     :return: None
     """
     print("Hello", name)
@@ -28,21 +27,21 @@ def custom_op(x=0, y=0):
     result = 10*x + y
     return result
 
-print(custom_op(5,8))
-x = custom_op(5,8)
-print(f"The result of custom_op is: {x}")
-x = custom_op(y=9, x=5)
-print(f"the result of custom_op is : {x}")
-print(custom_op(5))
-print(custom_op())
-print(custom_op(y=9))
+print(custom_op(5, 8))
+x = custom_op(5, 9) # arguments by position!
+print(f"the result of custom_op is: {x}")
+x = custom_op(y=9, x=5) # arguments by name!
+print(f"the result of custom_op is: {x}")
+print(custom_op(5)) # using default values for y
+print(custom_op()) # default values for both
+print(custom_op(y=9)) # default value for x
 
 def bond_intro(name):
     print("the name is:", name)
 
-def bond_name(first, last):
+def bond_name(first="James", last="Bond"):
     return f"{last}, {first} {last}"
 
-print(bond_name("Alejandro", "Ferreiro"))
-bond_intro(bond_name("Alejandro", "Ferreiro"))
+print(bond_name("Bogdan", "Ratiu"))
+bond_intro(bond_name("Bogdan", "Ratiu"))
 bond_intro(bond_name())
